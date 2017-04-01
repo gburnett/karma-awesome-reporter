@@ -1,25 +1,21 @@
-# karma-spec-reporter
+# karma-awesome-reporter
 
-[![Join the chat at https://gitter.im/mlex/karma-spec-reporter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/mlex/karma-spec-reporter?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge) [![Build Status](https://travis-ci.org/mlex/karma-spec-reporter.svg)](https://travis-ci.org/mlex/karma-spec-reporter)
-[![Coverage Status](https://coveralls.io/repos/mlex/karma-spec-reporter/badge.svg?branch=master&service=github)](https://coveralls.io/github/mlex/karma-spec-reporter?branch=master)
-
-Test reporter, that prints detailed results to console (similar to mocha's spec reporter).
+Test reporter, that prints detailed results to console (forked from the karma-spec-reporter).
 
 ## Usage
 
 To use in your own Node.js project, just execute
 ```
-npm install karma-spec-reporter --save-dev
+npm install karma-awesome-reporter --save-dev
 ```
-This will download the karma-spec-reporter and add the dependency to `package.json`.
+This will download the karma-awesome-reporter and add the dependency to `package.json`.
 
 Then add ``'spec'`` to reporters in karma.conf.js, e.g.
 
 ```
-reporters: ['spec']
+reporters: ['awesome']
 ```
 
-Take a look at the [karma-spec-reporter-example](http://github.com/mlex/karma-spec-reporter-example) repository to see the reporter in action.
 
 ## Configuration
 
@@ -30,7 +26,7 @@ karma.conf.js file
 ...
   config.set({
     ...
-      reporters: ["spec"],
+      reporters: ["awesome"],
       specReporter: {
         maxLogLines: 5,             // limit number of lines logged per test
         suppressErrorSummary: true, // do not print error summary
@@ -38,9 +34,9 @@ karma.conf.js file
         suppressPassed: false,      // do not print information about passed tests
         suppressSkipped: true,      // do not print information about skipped tests
         showSpecTiming: false,      // print the time elapsed for each spec
-        failFast: true              // test would finish with error when a first fail occurs. 
+        failFast: true              // test would finish with error when a first fail occurs.
       },
-      plugins: ["karma-spec-reporter"],
+      plugins: ["karma-awesome-reporter"],
     ...
 ```
 

@@ -1,4 +1,5 @@
 require('colors');
+var awesome = require('./awesome.js');
 
 var SpecReporter = function (baseReporterDecorator, formatError, config) {
   baseReporterDecorator(this);
@@ -31,6 +32,7 @@ var SpecReporter = function (baseReporterDecorator, formatError, config) {
     this.X_FAILED = ' (%d FAILED)'.red;
     this.TOTAL_SUCCESS = 'TOTAL: %d SUCCESS'.green + '\n';
     this.TOTAL_FAILED = 'TOTAL: %d FAILED, %d SUCCESS'.red + '\n';
+    this.AWESOME = awesome.join('');
   }
 
   this.onRunComplete = function (browsers, results) {
@@ -41,6 +43,7 @@ var SpecReporter = function (baseReporterDecorator, formatError, config) {
     if (browsers.length >= 1 && !results.disconnected && !results.error) {
       if (!results.failed) {
         this.write(this.TOTAL_SUCCESS, results.success);
+        this.write(this.AWESOME);
       } else {
         this.write(this.TOTAL_FAILED, results.failed, results.success);
         if (!this.suppressErrorSummary) {
@@ -156,5 +159,5 @@ var SpecReporter = function (baseReporterDecorator, formatError, config) {
 SpecReporter.$inject = ['baseReporterDecorator', 'formatError', 'config'];
 
 module.exports = {
-  'reporter:spec': ['type', SpecReporter]
+  'reporter:awesome': ['type', SpecReporter]
 };

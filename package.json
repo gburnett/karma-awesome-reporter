@@ -1,6 +1,6 @@
 {
-  "name": "karma-spec-reporter",
-  "version": "0.0.30",
+  "name": "karma-awesome-reporter",
+  "version": "1.0.0",
   "description": "A Karma plugin. Report all spec-results to console (like mocha's spec reporter).",
   "main": "index.js",
   "scripts": {
@@ -9,13 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mlex/karma-spec-reporter.git"
+    "url": "git://github.com/gburnett/karma-spec-reporter.git"
   },
   "keywords": [
     "karma-plugin",
-    "reporter"
+    "reporter",
+    "awesome"
   ],
-  "author": "Michael Lex <michael.lex@codecentric.de>",
+  "author": "gburnett",
   "dependencies": {
     "colors": "^1.1.2"
   },
@@ -33,6 +34,7 @@
     "sinon-chai": "^2.8.0"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "awesome.js"
   ]
 }
