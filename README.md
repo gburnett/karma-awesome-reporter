@@ -10,7 +10,7 @@ npm install karma-awesome-reporter --save-dev
 ```
 This will download the karma-awesome-reporter and add the dependency to `package.json`.
 
-Then add ``'spec'`` to reporters in karma.conf.js, e.g.
+Then add ``'awesome'`` to reporters in karma.conf.js, e.g.
 
 ```
 reporters: ['awesome']
