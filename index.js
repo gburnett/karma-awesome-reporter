@@ -1,9 +1,13 @@
 require('colors');
 var awesome = require('./awesome.js');
 var notAwesome = require('./notAwesome.js');
+var winAwesome = require('./winAwesome.js');
+var winNotAwesome = require('./winNotAwesome.js');
 
 var SpecReporter = function(baseReporterDecorator, formatError, config) {
   baseReporterDecorator(this);
+  var platformAwesome;
+  var platformNotAwesome;
 
   var reporterCfg = config.specReporter || {};
   this.prefixes = reporterCfg.prefixes || {
@@ -16,6 +20,11 @@ var SpecReporter = function(baseReporterDecorator, formatError, config) {
     this.prefixes.success = '\u221A ';
     this.prefixes.failure = '\u00D7 ';
     this.prefixes.skipped = '- ';
+    platformAwesome = winAwesome;
+    platformNotAwesome = winNotAwesome;
+  } else {
+    platformAwesome = awesome;
+    platformNotAwesome = notAwesome;
   }
 
   this.failures = [];
@@ -33,8 +42,8 @@ var SpecReporter = function(baseReporterDecorator, formatError, config) {
     this.X_FAILED = ' (%d FAILED)'.red;
     this.TOTAL_SUCCESS = 'TOTAL: %d SUCCESS'.green + '\n';
     this.TOTAL_FAILED = 'TOTAL: %d FAILED, %d SUCCESS'.red + '\n';
-    this.AWESOME = awesome.join('');
-    this.NOT_AWESOME = notAwesome.join('');
+    this.AWESOME = platformAwesome.join('');
+    this.NOT_AWESOME = platformNotAwesome.join('');
   }
 
   this.onRunComplete = function(browsers, results) {
