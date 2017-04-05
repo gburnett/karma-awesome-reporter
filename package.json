@@ -1,6 +1,6 @@
 {
   "name": "karma-awesome-reporter",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A Karma plugin. Report all spec-results to console (like mocha's spec reporter).",
   "main": "index.js",
   "scripts": {
@@ -36,6 +36,8 @@
   "files": [
     "index.js",
     "awesome.js",
-    "notAwesome.js"
+    "notAwesome.js",
+    "winAwesome.js",
+    "winNotAwesome.js"
   ]
 }
